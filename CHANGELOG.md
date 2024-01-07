@@ -1,3 +1,7 @@
+## 0.0.4
+
+* Fix iOS 17 widget background issue.
+
 ## 0.0.3
 
 * Fix the readme logo file.

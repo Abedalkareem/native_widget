@@ -106,6 +106,7 @@ class _OneWidgetExampleState extends State<OneWidgetExample> {
           ),
         ),
       ),
+      context: context,
       size: const Size(500, 250),
       wait: const Duration(seconds: 1),
     );
@@ -144,6 +145,7 @@ class _OneWidgetExampleState extends State<OneWidgetExample> {
           ),
         ),
       ),
+      context: context,
       size: const Size(500, 250),
     );
     String base64Image = base64Encode(background!);

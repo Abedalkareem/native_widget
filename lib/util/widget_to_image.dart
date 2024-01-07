@@ -12,6 +12,7 @@ class WidgetToImage {
   ///
   static Future<Uint8List?> dataFromWidget(
     Widget widget, {
+    required BuildContext context,
     Alignment alignment = Alignment.center,
     Duration? wait,
     Size size = const Size(double.maxFinite, double.maxFinite),
@@ -21,7 +22,7 @@ class WidgetToImage {
     final repaintBoundary = RenderRepaintBoundary();
 
     final renderView = RenderView(
-      window: ui.window,
+      view: View.of(context),
       child: RenderPositionedBox(
           alignment: Alignment.center, child: repaintBoundary),
       configuration: ViewConfiguration(
@@ -38,9 +39,12 @@ class WidgetToImage {
 
     final rootElement = RenderObjectToWidgetAdapter<RenderBox>(
         container: repaintBoundary,
-        child: Directionality(
-          textDirection: TextDirection.ltr,
-          child: widget,
+        child: MediaQuery(
+          data: MediaQueryData(size: size),
+          child: Directionality(
+            textDirection: TextDirection.ltr,
+            child: widget,
+          ),
         )).attachToRenderTree(buildOwner);
 
     buildOwner.buildScope(rootElement);

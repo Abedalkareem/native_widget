@@ -113,6 +113,7 @@ class _GameWidgetExampleState extends State<GameWidgetExample> {
           ),
         ),
       ),
+      context: context,
       size: const Size(500, 250),
     );
     String base64Image = base64Encode(background!);
@@ -151,6 +152,7 @@ class _GameWidgetExampleState extends State<GameWidgetExample> {
           ),
         ),
       ),
+      context: context,
       size: const Size(500, 250),
     );
     String base64Image = base64Encode(background!);
@@ -159,7 +161,7 @@ class _GameWidgetExampleState extends State<GameWidgetExample> {
 
   Future<String> fullLivesForground() async {
     final background = await WidgetToImage.dataFromWidget(
-      SizedBox(
+      const SizedBox(
         width: 700,
         height: 250,
         child: Center(
@@ -168,7 +170,7 @@ class _GameWidgetExampleState extends State<GameWidgetExample> {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 Icon(
                   Icons.favorite,
                   color: Colors.white,
@@ -195,6 +197,7 @@ class _GameWidgetExampleState extends State<GameWidgetExample> {
           ),
         ),
       ),
+      context: context,
       size: const Size(700, 250),
     );
     String base64Image = base64Encode(background!);

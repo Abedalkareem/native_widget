@@ -39,12 +39,12 @@ class _WidgetsScreenState extends State<WidgetsScreen> {
             : 'Update widget with id ${widget.id}'),
       ),
       body: timelines.isEmpty
-          ? Center(
+          ? const Center(
               child: Padding(
-              padding: const EdgeInsets.all(20),
+              padding: EdgeInsets.all(20),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   Text(
                     "You don't have any widgets yet",
                     textAlign: TextAlign.center,
@@ -58,12 +58,12 @@ class _WidgetsScreenState extends State<WidgetsScreen> {
               ),
             ))
           : done
-              ? Center(
+              ? const Center(
                   child: Padding(
-                  padding: const EdgeInsets.all(20),
+                  padding: EdgeInsets.all(20),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
+                    children: [
                       Text(
                         "Widget is set! you can now check your home screen",
                         textAlign: TextAlign.center,
